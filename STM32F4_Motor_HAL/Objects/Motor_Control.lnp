@@ -1,8 +1,11 @@
 --cpu=Cortex-M4.fp.sp
 ".\objects\main.o"
 ".\objects\app_motor.o"
+".\objects\app_uart.o"
 ".\objects\bsp_motor.o"
+".\objects\bsp_uart.o"
 ".\objects\drv_pwm.o"
+".\objects\drv_encoder.o"
 ".\objects\if_motor.o"
 ".\objects\stm32f4xx_hal_msp.o"
 ".\objects\stm32f4xx_it.o"

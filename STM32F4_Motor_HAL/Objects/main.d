@@ -1,5 +1,6 @@
 .\objects\main.o: APP\Src\main.c
 .\objects\main.o: .\APP\Ins\main.h
+.\objects\main.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: .\DRIVERS\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 .\objects\main.o: .\CONFIG\stm32f4xx_hal_conf.h
 .\objects\main.o: .\DRIVERS\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h
@@ -14,7 +15,6 @@
 .\objects\main.o: .\DRIVERS\CMSIS\Include\mpu_armv7.h
 .\objects\main.o: .\DRIVERS\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 .\objects\main.o: .\DRIVERS\STM32F4xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
-.\objects\main.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: .\DRIVERS\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h
 .\objects\main.o: .\DRIVERS\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h
 .\objects\main.o: .\DRIVERS\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h
@@ -68,3 +68,5 @@
 .\objects\main.o: .\CONFIG\gpio_config.h
 .\objects\main.o: .\APP\Ins\app_motor.h
 .\objects\main.o: .\APP\Ins\main.h
+.\objects\main.o: .\APP\Ins\app_uart.h
+.\objects\main.o: E:\Keil5\ARM\ARMCC\Bin\..\include\string.h

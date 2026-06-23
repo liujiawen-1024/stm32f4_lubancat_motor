@@ -1,6 +1,7 @@
 .\objects\if_motor.o: INTERFACE\Src\if_motor.c
 .\objects\if_motor.o: .\INTERFACE\Ins\if_motor.h
 .\objects\if_motor.o: .\APP\Ins\main.h
+.\objects\if_motor.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\if_motor.o: .\DRIVERS\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 .\objects\if_motor.o: .\CONFIG\stm32f4xx_hal_conf.h
 .\objects\if_motor.o: .\DRIVERS\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h
@@ -15,7 +16,6 @@
 .\objects\if_motor.o: .\DRIVERS\CMSIS\Include\mpu_armv7.h
 .\objects\if_motor.o: .\DRIVERS\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 .\objects\if_motor.o: .\DRIVERS\STM32F4xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
-.\objects\if_motor.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\if_motor.o: .\DRIVERS\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h
 .\objects\if_motor.o: .\DRIVERS\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h
 .\objects\if_motor.o: .\DRIVERS\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h
@@ -69,5 +69,7 @@
 .\objects\if_motor.o: .\CONFIG\gpio_config.h
 .\objects\if_motor.o: .\APP\Ins\app_motor.h
 .\objects\if_motor.o: .\APP\Ins\main.h
+.\objects\if_motor.o: .\APP\Ins\app_uart.h
+.\objects\if_motor.o: E:\Keil5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\if_motor.o: .\DRIVER\Ins\drv_pwm.h
 .\objects\if_motor.o: .\BSP\Ins\bsp_motor.h

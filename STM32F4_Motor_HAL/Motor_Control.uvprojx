@@ -396,6 +396,11 @@
               <FileType>1</FileType>
               <FilePath>.\APP\Src\app_motor.c</FilePath>
             </File>
+            <File>
+              <FileName>app_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\APP\Src\app_uart.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -405,6 +410,11 @@
               <FileName>bsp_motor.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\BSP\Src\bsp_motor.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\BSP\Src\bsp_uart.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -425,6 +435,11 @@
               <FileName>drv_pwm.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\DRIVER\Src\drv_pwm.c</FilePath>
+            </File>
+            <File>
+              <FileName>drv_encoder.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\DRIVER\Src\drv_encoder.c</FilePath>
             </File>
           </Files>
         </Group>

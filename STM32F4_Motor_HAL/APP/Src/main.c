@@ -2,19 +2,20 @@
 
 int main(void)
 {
-	HAL_Init();
-  SystemClock_Config();
-	APP_MOTOR_Init();
+    HAL_Init();
+    SystemClock_Config();
+    
+		APP_UART_Init(UART_BAUD);
 	
-	APP_MOTOR_Ctrl(30,1);
-	
-	while(1)
-	{
-		HAL_Delay(20);
-	}
-	
+		APP_UART_SendString("NVIC中断测试\r\n");
+		APP_UART_StartReceive();
+    
+    while(1)
+    {
+        // 主循环可以干其他事情，比如控制电机
+        HAL_Delay(10);
+    }
 }
-
 
 /**
   * @brief System Clock Configuration

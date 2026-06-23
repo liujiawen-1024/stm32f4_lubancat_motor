@@ -52,6 +52,17 @@
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+extern UART_HandleTypeDef huart1;
+
+/**
+ * @brief USART1 中断服务函数
+ * @note  当 USART1 产生中断时，CPU 会自动跳到这里
+ */
+void USART1_IRQHandler(void)
+{
+	HAL_UART_IRQHandler(&huart1);
+}
+
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
