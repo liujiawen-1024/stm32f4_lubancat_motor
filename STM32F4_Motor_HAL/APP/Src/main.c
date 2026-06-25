@@ -1,18 +1,42 @@
 #include "main.h"
+#include "if_motor.h"
+
+int32_t count = 0;
+float sum = 0.0f;
+#define PID_TARGET_PULSES 1040
 
 int main(void)
 {
     HAL_Init();
     SystemClock_Config();
     
-		APP_UART_Init(UART_BAUD);
-	
-		APP_UART_SendString("NVIC中断测试\r\n");
-		APP_UART_StartReceive();
+    APP_MOTOR_Init();
+    APP_ENCODER_Init();
+    APP_ENCODER_Start();
+    APP_ENCODER_Clear();
+    APP_UART_Init(115200);
+
+    APP_MOTOR_PID_Init();
+    
+    printf("\r\n开始 PID 位置控制测试\r\n");
+    printf("目标: %d 个脉冲\r\n", PID_TARGET_PULSES);
+    
+    APP_MOTOR_Go2Revolutions(20.0f);
     
     while(1)
     {
-        // 主循环可以干其他事情，比如控制电机
+        APP_MOTOR_RunToPosition(PID_TARGET_PULSES);
+        
+        static uint32_t timer = 0;
+        if (++timer >= 100) {
+            timer = 0;
+            int32_t current = APP_ENCODER_Count();
+            int32_t error = PID_TARGET_PULSES - current;
+            float output = APP_MOTOR_GetPIDOutput();
+            printf("目标: %d, 当前位置: %ld, 误差: %ld, PID输出: %.2f\r\n",
+                   PID_TARGET_PULSES, (long)current, (long)error, output);
+        }
+        
         HAL_Delay(10);
     }
 }

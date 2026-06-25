@@ -9,5 +9,5 @@ void IF_MOTOR_Stop(void);
 void IF_MOTOR_Forward(void);
 void IF_MOTOR_Reversal(void);
 void IF_MOTOR_SetSpeed(uint8_t speed);
-
+void IF_MOTOR_PWM_SetSpeed(uint16_t speed);
 #endif /*_IF_MOTRO_H_*/

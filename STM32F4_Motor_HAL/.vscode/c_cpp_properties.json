@@ -3,7 +3,6 @@
         {
             "name": "Target 1",
             "includePath": [
-                "f:\\STM32TEST\\STM32F4_Motor_HAL\\AIGORITHM\\Ins",
                 "f:\\STM32TEST\\STM32F4_Motor_HAL\\APP\\Ins",
                 "f:\\STM32TEST\\STM32F4_Motor_HAL\\BSP\\Ins",
                 "f:\\STM32TEST\\STM32F4_Motor_HAL\\CONFIG",
@@ -17,14 +16,18 @@
                 "f:\\STM32TEST\\STM32F4_Motor_HAL\\DRIVERS\\CMSIS\\Device\\ST\\STM32F4xx\\Include",
                 "f:\\STM32TEST\\STM32F4_Motor_HAL\\DRIVERS\\STM32F4xx_HAL_Driver\\Inc",
                 "f:\\STM32TEST\\STM32F4_Motor_HAL\\DRIVERS\\STM32F4xx_HAL_Driver\\Inc\\Legacy",
+                "f:\\STM32TEST\\STM32F4_Motor_HAL\\PROTOCOL\\Ins",
+                "f:\\STM32TEST\\STM32F4_Motor_HAL\\ALGORITHM\\Ins",
                 "E:\\Keil5\\ARM\\ARMCC\\include",
                 "E:\\Keil5\\ARM\\ARMCC\\include\\rw",
+                "f:\\STM32TEST\\STM32F4_Motor_HAL\\ALGORITHM\\Src",
                 "f:\\STM32TEST\\STM32F4_Motor_HAL\\APP\\Src",
                 "f:\\STM32TEST\\STM32F4_Motor_HAL\\BSP\\Src",
                 "f:\\STM32TEST\\STM32F4_Motor_HAL\\DRIVER\\Src",
                 "f:\\STM32TEST\\STM32F4_Motor_HAL\\INTERFACE\\Src",
                 "f:\\STM32TEST\\STM32F4_Motor_HAL\\CORE\\Src",
-                "f:\\STM32TEST\\STM32F4_Motor_HAL\\DRIVERS\\STM32F4xx_HAL_Driver\\Src"
+                "f:\\STM32TEST\\STM32F4_Motor_HAL\\DRIVERS\\STM32F4xx_HAL_Driver\\Src",
+                "f:\\STM32TEST\\STM32F4_Motor_HAL\\PROTOCOL\\Src"
             ],
             "defines": [
                 "STM32F40_41xxx",

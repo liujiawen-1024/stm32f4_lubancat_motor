@@ -6,6 +6,10 @@ PE14	方向控制AIN1
 PE13	方向控制AIN2
 PE8		使能控制
 
+编码器
+PA6		编码器A相
+PA7		编码器B相
+
 串口通信
 PA9		USART1_TX
 PA10	USART1_RX

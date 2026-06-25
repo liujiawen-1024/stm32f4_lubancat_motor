@@ -9,7 +9,7 @@ TIM_HandleTypeDef htim1;
 	*	当前配置：168KHz / 1 / 8400 = 20KHz
 	*	占空比精度：1 / 8400 ≈ 0.012%
 	*/
-void DIR_PWM_Init(void)
+void DRV_PWM_Init(void)
 {
 		// 高级定时器主模式配置结构体
 		TIM_MasterConfigTypeDef sCongifMaster = {0};
@@ -18,7 +18,7 @@ void DIR_PWM_Init(void)
 		// 刹车和死区配置结构体
 		TIM_BreakDeadTimeConfigTypeDef sConfigBD = {0};
 		
-		DIR_PWM_RCC_ON();
+		DRV_PWM_RCC_ON();
 		
 		// 配置定时器时基
 		htim1.Instance = TIM1;
@@ -78,7 +78,7 @@ void DIR_PWM_Init(void)
 	*					4200 -> 50%
 	*					8400 -> 100%
 	*/
-void DIR_PWM_SetDuty(uint16_t duty)
+void DRV_PWM_SetDuty(uint16_t duty)
 {
 		// 限幅保护
 	if(duty > 8400)
@@ -93,7 +93,7 @@ void DIR_PWM_SetDuty(uint16_t duty)
 /**
 	* @brief	启动PWM输出
 	*/
-void DIR_PWM_Start(void)
+void DRV_PWM_Start(void)
 {
 	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
 }
@@ -101,7 +101,7 @@ void DIR_PWM_Start(void)
 /**
 	* @brief	关闭PWM输出
 	*/
-void DIR_PWM_Stop(void)
+void DRV_PWM_Stop(void)
 {
 	HAL_TIM_PWM_Stop(&htim1,TIM_CHANNEL_1);
 }

@@ -70,4 +70,5 @@
 .\objects\bsp_uart.o: .\APP\Ins\app_motor.h
 .\objects\bsp_uart.o: .\APP\Ins\main.h
 .\objects\bsp_uart.o: .\APP\Ins\app_uart.h
+.\objects\bsp_uart.o: .\APP\Ins\app_encoder.h
 .\objects\bsp_uart.o: E:\Keil5\ARM\ARMCC\Bin\..\include\string.h

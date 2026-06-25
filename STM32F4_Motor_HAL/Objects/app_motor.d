@@ -70,5 +70,7 @@
 .\objects\app_motor.o: .\APP\Ins\app_motor.h
 .\objects\app_motor.o: .\APP\Ins\app_uart.h
 .\objects\app_motor.o: .\APP\Ins\main.h
+.\objects\app_motor.o: .\APP\Ins\app_encoder.h
 .\objects\app_motor.o: E:\Keil5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\app_motor.o: .\INTERFACE\Ins\if_motor.h
+.\objects\app_motor.o: .\ALGORITHM\Ins\alg_pid.h

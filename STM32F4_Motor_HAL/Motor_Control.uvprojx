@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\AIGORITHM\Ins;.\APP\Ins;.\BSP\Ins;.\CONFIG;.\CORE\Inc;.\DRIVER\Ins;.\INTERFACE\Ins;.\UTILS\Ins;.\README;.\CORE\Ins;.\DRIVERS\CMSIS\Include;.\DRIVERS\CMSIS\Device\ST\STM32F4xx\Include;.\DRIVERS\STM32F4xx_HAL_Driver\Inc;.\DRIVERS\STM32F4xx_HAL_Driver\Inc\Legacy</IncludePath>
+              <IncludePath>.\APP\Ins;.\BSP\Ins;.\CONFIG;.\CORE\Inc;.\DRIVER\Ins;.\INTERFACE\Ins;.\UTILS\Ins;.\README;.\CORE\Ins;.\DRIVERS\CMSIS\Include;.\DRIVERS\CMSIS\Device\ST\STM32F4xx\Include;.\DRIVERS\STM32F4xx_HAL_Driver\Inc;.\DRIVERS\STM32F4xx_HAL_Driver\Inc\Legacy;.\PROTOCOL\Ins;.\ALGORITHM\Ins</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -382,6 +382,13 @@
       <Groups>
         <Group>
           <GroupName>AIGORITHM</GroupName>
+          <Files>
+            <File>
+              <FileName>alg_pid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\ALGORITHM\Src\alg_pid.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>APP</GroupName>
@@ -401,6 +408,11 @@
               <FileType>1</FileType>
               <FilePath>.\APP\Src\app_uart.c</FilePath>
             </File>
+            <File>
+              <FileName>app_encoder.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\APP\Src\app_encoder.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -415,6 +427,11 @@
               <FileName>bsp_uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\BSP\Src\bsp_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_encoder.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\BSP\Src\bsp_encoder.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -435,11 +452,6 @@
               <FileName>drv_pwm.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\DRIVER\Src\drv_pwm.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_encoder.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\DRIVER\Src\drv_encoder.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -538,6 +550,16 @@
               <FileName>stm32f4xx_hal_tim_ex.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\DRIVERS\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>PROTOCOL</GroupName>
+          <Files>
+            <File>
+              <FileName>pt_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\PROTOCOL\Src\pt_uart.c</FilePath>
             </File>
           </Files>
         </Group>

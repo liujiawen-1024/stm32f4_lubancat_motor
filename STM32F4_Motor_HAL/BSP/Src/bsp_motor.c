@@ -1,5 +1,8 @@
 #include "bsp_motor.h"
 
+/**
+	*	@brief		电机初始化
+	*/
 void BSP_MOTOR_Init(void)
 {
 	GPIO_InitTypeDef gpio = {0};

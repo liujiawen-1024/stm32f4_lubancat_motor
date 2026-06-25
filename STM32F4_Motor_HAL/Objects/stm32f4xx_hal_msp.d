@@ -69,4 +69,5 @@
 .\objects\stm32f4xx_hal_msp.o: .\APP\Ins\app_motor.h
 .\objects\stm32f4xx_hal_msp.o: .\APP\Ins\main.h
 .\objects\stm32f4xx_hal_msp.o: .\APP\Ins\app_uart.h
+.\objects\stm32f4xx_hal_msp.o: .\APP\Ins\app_encoder.h
 .\objects\stm32f4xx_hal_msp.o: E:\Keil5\ARM\ARMCC\Bin\..\include\string.h

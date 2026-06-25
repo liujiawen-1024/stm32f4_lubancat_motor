@@ -1,11 +1,13 @@
 --cpu=Cortex-M4.fp.sp
+".\objects\alg_pid.o"
 ".\objects\main.o"
 ".\objects\app_motor.o"
 ".\objects\app_uart.o"
+".\objects\app_encoder.o"
 ".\objects\bsp_motor.o"
 ".\objects\bsp_uart.o"
+".\objects\bsp_encoder.o"
 ".\objects\drv_pwm.o"
-".\objects\drv_encoder.o"
 ".\objects\if_motor.o"
 ".\objects\stm32f4xx_hal_msp.o"
 ".\objects\stm32f4xx_it.o"
@@ -20,6 +22,7 @@
 ".\objects\stm32f4xx_hal_pwr.o"
 ".\objects\stm32f4xx_hal_rcc.o"
 ".\objects\stm32f4xx_hal_tim_ex.o"
+".\objects\pt_uart.o"
 --library_type=microlib --ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Listings\Motor_Control.map" -o .\Objects\Motor_Control.axf

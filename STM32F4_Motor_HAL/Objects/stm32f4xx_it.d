@@ -69,5 +69,6 @@
 .\objects\stm32f4xx_it.o: .\APP\Ins\app_motor.h
 .\objects\stm32f4xx_it.o: .\APP\Ins\main.h
 .\objects\stm32f4xx_it.o: .\APP\Ins\app_uart.h
+.\objects\stm32f4xx_it.o: .\APP\Ins\app_encoder.h
 .\objects\stm32f4xx_it.o: E:\Keil5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\stm32f4xx_it.o: .\CORE\Inc\stm32f4xx_it.h

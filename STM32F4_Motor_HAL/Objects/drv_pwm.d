@@ -70,5 +70,6 @@
 .\objects\drv_pwm.o: .\APP\Ins\app_motor.h
 .\objects\drv_pwm.o: .\APP\Ins\main.h
 .\objects\drv_pwm.o: .\APP\Ins\app_uart.h
+.\objects\drv_pwm.o: .\APP\Ins\app_encoder.h
 .\objects\drv_pwm.o: E:\Keil5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\drv_pwm.o: .\BSP\Ins\bsp_motor.h

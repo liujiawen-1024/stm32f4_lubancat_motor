@@ -8,7 +8,7 @@
 void IF_MOTOR_Init(void)
 {
 	BSP_MOTOR_Init();
-	DIR_PWM_Init();
+	DRV_PWM_Init();
 }
 
 
@@ -18,7 +18,7 @@ void IF_MOTOR_Init(void)
 void IF_MOTOR_Start(void)
 {
 	HAL_GPIO_WritePin(MOTOR_PWM_GPIO_PORT,MOTOR_STBY_GPIO_PIN,GPIO_PIN_SET);
-	DIR_PWM_Start();
+	DRV_PWM_Start();
 }
 
 /**
@@ -26,7 +26,7 @@ void IF_MOTOR_Start(void)
 	*/
 void IF_MOTOR_Stop(void)
 {
-	DIR_PWM_Stop();
+	DRV_PWM_Stop();
 	HAL_GPIO_WritePin(MOTOR_PWM_GPIO_PORT,MOTOR_STBY_GPIO_PIN,GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(MOTOR_PWM_GPIO_PORT,MOTOR_AIN1_GPIO_PIN,GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(MOTOR_PWM_GPIO_PORT,MOTOR_AIN2_GPIO_PIN,GPIO_PIN_RESET);
@@ -68,5 +68,21 @@ void IF_MOTOR_SetSpeed(uint8_t speed)
 	}
 	
 	uint16_t setspeed = (speed * 8400) / 100;
-	DIR_PWM_SetDuty(setspeed);
+	DRV_PWM_SetDuty(setspeed);
+}
+
+/**
+	* @brief	PWM速度设置
+	* @param	seppd：速度设置
+	*	@note		seppd：0 ~ 100 转 0 ~ 8400
+	*/
+void IF_MOTOR_PWM_SetSpeed(uint16_t speed)
+{
+	// 限幅
+	if(speed > 8400)
+	{
+		speed = 8400;
+	}
+	
+	DRV_PWM_SetDuty(speed);
 }

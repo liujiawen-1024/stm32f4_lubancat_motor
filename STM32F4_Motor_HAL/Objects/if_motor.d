@@ -70,6 +70,7 @@
 .\objects\if_motor.o: .\APP\Ins\app_motor.h
 .\objects\if_motor.o: .\APP\Ins\main.h
 .\objects\if_motor.o: .\APP\Ins\app_uart.h
+.\objects\if_motor.o: .\APP\Ins\app_encoder.h
 .\objects\if_motor.o: E:\Keil5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\if_motor.o: .\DRIVER\Ins\drv_pwm.h
 .\objects\if_motor.o: .\BSP\Ins\bsp_motor.h

@@ -7,11 +7,10 @@
 
 #include "app_motor.h"
 #include "app_uart.h"
+#include "app_encoder.h"
 
 #include "stdio.h"
 #include "string.h"
-
-
 
 void SystemClock_Config(void);
 void Error_Handler(void);
