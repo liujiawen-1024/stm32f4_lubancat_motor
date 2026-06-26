@@ -1,43 +1,53 @@
 #include "main.h"
-#include "if_motor.h"
 
 int32_t count = 0;
-float sum = 0.0f;
-#define PID_TARGET_PULSES 1040
+
+#define PULSES_PER_REV  52    // 轮子转一圈的脉冲数
+#define TARGET_REV      200.0f    // 目标
+#define TARGET_PULSES   (int32_t)(TARGET_REV * PULSES_PER_REV)
 
 int main(void)
 {
     HAL_Init();
     SystemClock_Config();
     
-    APP_MOTOR_Init();
+    APP_UART_Init(115200);
+    
     APP_ENCODER_Init();
     APP_ENCODER_Start();
-    APP_ENCODER_Clear();
-    APP_UART_Init(115200);
-
+    APP_ENCODER_Clear();  // 清零
+    
+    APP_MOTOR_Init();
     APP_MOTOR_PID_Init();
     
-    printf("\r\n开始 PID 位置控制测试\r\n");
-    printf("目标: %d 个脉冲\r\n", PID_TARGET_PULSES);
+    printf("\r\n===== PID 位置控制测试 =====\r\n");
+    printf("目标: %.1f 圈 (%d 个脉冲)\r\n", TARGET_REV, TARGET_PULSES);
     
-    APP_MOTOR_Go2Revolutions(20.0f);
+    // 启动位置控制
+    APP_MOTOR_Go2Revolutions(TARGET_REV);
+    
+    uint32_t print_timer = 0;
     
     while(1)
     {
-        APP_MOTOR_RunToPosition(PID_TARGET_PULSES);
-        
-        static uint32_t timer = 0;
-        if (++timer >= 100) {
-            timer = 0;
+        // 持续运行 PID
+        APP_MOTOR_RunToPosition(TARGET_PULSES);
+      
+				count = APP_ENCODER_Count();
+			
+        // 每0.5秒打印一次
+        if (++print_timer >= 50) {  // 50 * 10ms = 0.5秒
+            print_timer = 0;
             int32_t current = APP_ENCODER_Count();
-            int32_t error = PID_TARGET_PULSES - current;
+            int32_t error = TARGET_PULSES - current;
             float output = APP_MOTOR_GetPIDOutput();
-            printf("目标: %d, 当前位置: %ld, 误差: %ld, PID输出: %.2f\r\n",
-                   PID_TARGET_PULSES, (long)current, (long)error, output);
+            float rev = (float)current / PULSES_PER_REV;
+            
+            printf("目标: %5.1f圈 | 当前: %5.1f圈 | 误差: %5.1f圈 | PID: %6.2f | 当前脉冲数：%d\r\n",
+                   TARGET_REV, rev, (float)error / PULSES_PER_REV, output,count);
         }
         
-        HAL_Delay(10);
+        HAL_Delay(10);  // 10ms 控制周期
     }
 }
 

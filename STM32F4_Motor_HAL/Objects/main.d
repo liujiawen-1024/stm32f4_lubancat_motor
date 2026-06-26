@@ -71,4 +71,3 @@
 .\objects\main.o: .\APP\Ins\app_uart.h
 .\objects\main.o: .\APP\Ins\app_encoder.h
 .\objects\main.o: E:\Keil5\ARM\ARMCC\Bin\..\include\string.h
-.\objects\main.o: .\INTERFACE\Ins\if_motor.h

@@ -73,3 +73,4 @@
 .\objects\app_encoder.o: .\APP\Ins\app_encoder.h
 .\objects\app_encoder.o: E:\Keil5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\app_encoder.o: .\BSP\Ins\bsp_encoder.h
+.\objects\app_encoder.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h

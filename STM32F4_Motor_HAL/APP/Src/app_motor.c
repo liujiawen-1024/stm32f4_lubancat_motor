@@ -80,7 +80,7 @@ void APP_MOTOR_Ctrl(uint8_t speed,uint8_t direction)
 void APP_MOTOR_PID_Init(void)
 {
 	// Kp,Ki,Kd,输出最大值
-	ALG_PID_Init(&pid_position, 2.0f, 0.1f, 1.2f, 100.0f);
+	ALG_PID_Init(&pid_position, 1.0f, 0.0f, 0.0f, 80.0f);
 	ALG_PID_Reset(&pid_position);
 }
 
@@ -94,14 +94,14 @@ void APP_MOTOR_RunToPosition(int32_t target_pulses)
     float current = (float)APP_ENCODER_Count();
     float output = ALG_PID_Update(&pid_position, current);
     
-    if(output > 5.0f)
+    if(output > 0.2f)
     {
         uint8_t speed = (uint8_t)output;
         IF_MOTOR_Forward();
         IF_MOTOR_SetSpeed(speed);
         IF_MOTOR_Start();
     }
-    else if(output < -5.0f)
+    else if(output < -0.2f)
     {
         uint8_t speed = (uint8_t)(-output);       
         IF_MOTOR_Reversal();

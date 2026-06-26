@@ -17,14 +17,14 @@ void BSP_ENCODER_Init(void)
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
 	
   sConfig.EncoderMode = TIM_ENCODERMODE_TI12;
-  sConfig.IC1Polarity = TIM_ICPOLARITY_FALLING;
+  sConfig.IC1Polarity = TIM_ICPOLARITY_RISING;
   sConfig.IC1Selection = TIM_ICSELECTION_DIRECTTI;
   sConfig.IC1Prescaler = TIM_ICPSC_DIV1;
-  sConfig.IC1Filter = 0;
+  sConfig.IC1Filter = 8;
   sConfig.IC2Polarity = TIM_ICPOLARITY_RISING;
   sConfig.IC2Selection = TIM_ICSELECTION_DIRECTTI;
   sConfig.IC2Prescaler = TIM_ICPSC_DIV1;
-  sConfig.IC2Filter = 0;
+  sConfig.IC2Filter = 8;
 	
   if (HAL_TIM_Encoder_Init(&htim3, &sConfig) != HAL_OK)
   {
@@ -56,7 +56,7 @@ void HAL_TIM_Encoder_MspInit(TIM_HandleTypeDef* tim_encoderHandle)
 		
     GPIO_InitStruct.Pin = ENCODER_A|ENCODER_B;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Pull = GPIO_PULLUP;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
     GPIO_InitStruct.Alternate = GPIO_AF2_TIM3;
     HAL_GPIO_Init(ENCODER_PORT, &GPIO_InitStruct);
@@ -82,7 +82,9 @@ void BSP_ENCODER_Start(void)
 
 int32_t BSP_ENCODER_Count(void)
 {
-	int32_t count = (int32_t)__HAL_TIM_GET_COUNTER(&htim3);
+	uint32_t raw = __HAL_TIM_GET_COUNTER(&htim3);
+  int32_t count = (int32_t)(int16_t)raw;
+	
 	return count;
 }
 

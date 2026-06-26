@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\Objects\Motor_Control.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Motor_Control.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu Jun 25 11:14:06 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Jun 26 14:41:53 2026
 <BR><P>
-<H3>Maximum Stack Usage =        176 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        224 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 main &rArr; SystemClock_Config &rArr; HAL_RCC_ClockConfig &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
 <P>
@@ -562,8 +562,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[77]"></a>APP_ENCODER_Count</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, app_encoder.o(i.APP_ENCODER_Count))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = APP_ENCODER_Count
+<P><STRONG><a name="[77]"></a>APP_ENCODER_Count</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, app_encoder.o(i.APP_ENCODER_Count))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = APP_ENCODER_Count
 </UL>
 <BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_ENCODER_Count
 </UL>
@@ -571,10 +571,11 @@ Global Symbols
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[79]"></a>APP_ENCODER_Init</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, app_encoder.o(i.APP_ENCODER_Init))
+<P><STRONG><a name="[79]"></a>APP_ENCODER_Init</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, app_encoder.o(i.APP_ENCODER_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = APP_ENCODER_Init &rArr; BSP_ENCODER_Init &rArr; HAL_TIM_Encoder_Init &rArr; HAL_TIM_Encoder_MspInit &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_ENCODER_Init
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_ENCODER_Clear
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -654,14 +655,15 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[76]"></a>BSP_ENCODER_Clear</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, bsp_encoder.o(i.BSP_ENCODER_Clear))
-<BR><BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;APP_ENCODER_Clear
+<BR><BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;APP_ENCODER_Init
+<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;APP_ENCODER_Clear
 </UL>
 
-<P><STRONG><a name="[78]"></a>BSP_ENCODER_Count</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, bsp_encoder.o(i.BSP_ENCODER_Count))
+<P><STRONG><a name="[78]"></a>BSP_ENCODER_Count</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, bsp_encoder.o(i.BSP_ENCODER_Count))
 <BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;APP_ENCODER_Count
 </UL>
 
-<P><STRONG><a name="[7a]"></a>BSP_ENCODER_Init</STRONG> (Thumb, 112 bytes, Stack size 48 bytes, bsp_encoder.o(i.BSP_ENCODER_Init))
+<P><STRONG><a name="[7a]"></a>BSP_ENCODER_Init</STRONG> (Thumb, 118 bytes, Stack size 48 bytes, bsp_encoder.o(i.BSP_ENCODER_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = BSP_ENCODER_Init &rArr; HAL_TIM_Encoder_Init &rArr; HAL_TIM_Encoder_MspInit &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Init
@@ -919,7 +921,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_ENCODER_Init
 </UL>
 
-<P><STRONG><a name="[b4]"></a>HAL_TIM_Encoder_MspInit</STRONG> (Thumb, 120 bytes, Stack size 32 bytes, bsp_encoder.o(i.HAL_TIM_Encoder_MspInit))
+<P><STRONG><a name="[b4]"></a>HAL_TIM_Encoder_MspInit</STRONG> (Thumb, 122 bytes, Stack size 32 bytes, bsp_encoder.o(i.HAL_TIM_Encoder_MspInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = HAL_TIM_Encoder_MspInit &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
@@ -1193,8 +1195,8 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> printfa.o(i.__0printf)
 </UL>
-<P><STRONG><a name="[5b]"></a>main</STRONG> (Thumb, 150 bytes, Stack size 16 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = main &rArr; SystemClock_Config &rArr; HAL_RCC_ClockConfig &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
+<P><STRONG><a name="[5b]"></a>main</STRONG> (Thumb, 236 bytes, Stack size 64 bytes, main.o(i.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 224<LI>Call Chain = main &rArr; SystemClock_Config &rArr; HAL_RCC_ClockConfig &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
