@@ -1,0 +1,46 @@
+#include "led.h"
+
+
+void LED_Init(void)
+{
+	GPIO_InitTypeDef gpio = {0};
+	LED_RCC_ON();
+	
+	gpio.Mode = GPIO_MODE_OUTPUT_PP;
+	gpio.Pull = GPIO_NOPULL;
+	gpio.Speed = GPIO_SPEED_FREQ_LOW;
+	gpio.Pin = LED0_PIN|LED1_PIN;
+	
+	HAL_GPIO_Init(LED_PORT,&gpio);
+	
+	HAL_GPIO_WritePin(LED_PORT,LED0_PIN,GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_PORT,LED1_PIN,GPIO_PIN_SET);
+}
+
+void LED_ALL_ON(void)
+{
+	HAL_GPIO_WritePin(LED_PORT,LED0_PIN,GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(LED_PORT,LED1_PIN,GPIO_PIN_RESET);
+}
+void LED_ALL_OFF(void)
+{
+	HAL_GPIO_WritePin(LED_PORT,LED0_PIN,GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_PORT,LED1_PIN,GPIO_PIN_SET);
+}
+void LED1_ON(void)
+{
+	HAL_GPIO_WritePin(LED_PORT,LED0_PIN,GPIO_PIN_RESET);
+}
+void LED1_OFF(void)
+{
+	HAL_GPIO_WritePin(LED_PORT,LED0_PIN,GPIO_PIN_SET);
+}
+void LED0_ON(void)
+{
+	HAL_GPIO_WritePin(LED_PORT,LED1_PIN,GPIO_PIN_RESET);
+}
+void LED0_OFF(void)
+{
+	HAL_GPIO_WritePin(LED_PORT,LED1_PIN,GPIO_PIN_SET);
+}
+
