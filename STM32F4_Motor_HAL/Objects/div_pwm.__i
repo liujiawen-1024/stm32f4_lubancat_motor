@@ -1,3 +1,0 @@
---c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\AIGORITHM\Ins -I .\APP\Ins -I .\BSP\Ins -I .\CONFIG -I .\CORE\Inc -I .\DRIVER\Ins -I .\INTERFACE\Ins -I .\UTILS\Ins -I .\README -I .\CORE\Ins -I .\DRIVERS\CMSIS\Include -I .\DRIVERS\CMSIS\Device\ST\STM32F4xx\Include -I .\DRIVERS\STM32F4xx_HAL_Driver\Inc -I .\DRIVERS\STM32F4xx_HAL_Driver\Inc\Legacy
--D__UVISION_VERSION="536" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER
--o .\objects\div_pwm.o --omf_browse .\objects\div_pwm.crf --depend .\objects\div_pwm.d "DRIVER\Src\div_pwm.c"
